@@ -9,8 +9,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var alertIsVisible = false
+    
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            Button(action: {
+                print("Button pushed")
+                self.alertIsVisible = true
+            }) {
+                Text("Hit Me")
+                
+            }
+            .alert(isPresented: $alertIsVisible) {
+                () -> Alert in
+                    return Alert(
+                        title: Text("Hello"),
+                        message: Text("Hello message"),
+                        dismissButton: .default(Text("Dismiss"))
+                    )
+            }
+        }
     }
 }
 
