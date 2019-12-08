@@ -13,6 +13,19 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            // TODO: Create some rows
+            // Target Row
+            HStack {
+                Text("Put the bullseye as choose as you can to:")
+                Text("100")
+            }
+            // Slider Row
+            HStack {
+                Text("1")
+                Slider(value: .constant(100))
+                Text("100")
+            }
+            
             Button(action: {
                 print("Button pushed")
                 self.alertIsVisible = true
@@ -27,6 +40,20 @@ struct ContentView: View {
                         message: Text("Hello message"),
                         dismissButton: .default(Text("Dismiss"))
                     )
+            }
+            
+            // Button Row
+            HStack {
+                Button(action: {}) {
+                    Text("Start Over")
+                }
+                Text("Score:")
+                Text("999999")
+                Text("Round:")
+                Text("999")
+                Button(action: {}) {
+                    Text("Info")
+                }
             }
         }
     }
