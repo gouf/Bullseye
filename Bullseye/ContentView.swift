@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @State var alertIsVisible = false
     @State var sliderValue = 50.0
+    @State var target = Int.random(in: 1...100)
     
     var body: some View {
         VStack {
@@ -19,7 +20,7 @@ struct ContentView: View {
             // Target Row
             HStack {
                 Text("Put the bullseye as choose as you can to:")
-                Text("100")
+                Text("\(self.target)")
             }
             Spacer()
             
@@ -41,9 +42,11 @@ struct ContentView: View {
             }
             .alert(isPresented: $alertIsVisible) {
                 () -> Alert in
+                    let roundedValue = Int(self.sliderValue.rounded())
                     return Alert(
                         title: Text("Result"),
-                        message: Text("The slider's value is \(Int(self.sliderValue.rounded()))"),
+                        message: Text("The slider's value is \(roundedValue).\n" +
+                            "You scored \(self.pointForCurrentRound()) points this result."),
                         dismissButton: .default(Text("Dismiss"))
                     )
             }
@@ -69,6 +72,15 @@ struct ContentView: View {
             .padding(.leading, 20)
             .padding(.trailing, 20)
         }
+    }
+    
+    func pointForCurrentRound() -> Int {
+        let roundedValue = Int(self.sliderValue.rounded())
+        let difference = abs(self.target - roundedValue)
+        
+        let awardedPoints = 100 - difference
+        
+        return awardedPoints
     }
 }
 
