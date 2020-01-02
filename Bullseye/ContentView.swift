@@ -12,6 +12,7 @@ struct ContentView: View {
     @State var alertIsVisible = false
     @State var sliderValue = 50.0
     @State var target = Int.random(in: 1...100)
+    @State var totalScore = 0
     
     var body: some View {
         VStack {
@@ -45,7 +46,10 @@ struct ContentView: View {
                         title: Text("Result"),
                         message: Text("The slider's value is \(self.sliderValueRounded()).\n" +
                             "You scored \(self.pointsForCurrentRound()) points this result."),
-                        dismissButton: .default(Text("Dismiss"))
+                        dismissButton: .default(Text("Dismiss")) {
+                            self.totalScore += self.pointsForCurrentRound()
+                            self.target = Int.random(in: 1...100)
+                        }
                     )
             }
             Spacer()
@@ -57,7 +61,7 @@ struct ContentView: View {
                 }
                 Spacer()
                 Text("Score:")
-                Text("999999")
+                Text("\(self.totalScore)")
                 Spacer()
                 Text("Round:")
                 Text("999")
