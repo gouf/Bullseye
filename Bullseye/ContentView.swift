@@ -79,7 +79,20 @@ struct ContentView: View {
     }
     
     func pointsForCurrentRound() -> Int {
-        return 100 - amountOff()
+        let maximumScore = 100
+        let difference = amountOff()
+        let bonus : (Int) -> (Int) = { difference in
+            switch difference {
+            case 0:
+                return 100
+            case 1:
+                return 50
+            default:
+                return 0
+            }
+        }
+        
+        return maximumScore - difference + bonus(difference)
     }
     
     func amountOff() -> Int {
