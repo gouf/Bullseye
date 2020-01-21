@@ -59,7 +59,7 @@ struct ContentView: View {
             // Button Row
             HStack {
                 Button(action: {
-                    self.sttartNewGame()
+                    self.startNewGame()
                 }) {
                     Text("Start Over")
                 }
@@ -120,7 +120,7 @@ struct ContentView: View {
         }
     }
     
-    func sttartNewGame() {
+    func startNewGame() {
         self.currentRoundCount = 1
         self.totalScore = 0
         self.target = Int.random(in: 1...100)
