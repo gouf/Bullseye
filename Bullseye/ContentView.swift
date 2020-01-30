@@ -35,7 +35,6 @@ struct ContentView: View {
             .padding(.trailing, 10)
             
             Button(action: {
-                print("Button pushed")
                 self.alertIsVisible = true
             }) {
                 Text("Hit Me")
