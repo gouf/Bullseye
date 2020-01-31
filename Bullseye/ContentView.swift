@@ -121,7 +121,7 @@ struct ContentView: View {
                 Text("Round:").modifier(LabelStyle())
                 Text("\(self.currentRoundCount)").modifier(ValueStyle())
                 Spacer()
-                Button(action: {}) {
+                NavigationLink(destination: AboutView()) {
                     HStack {
                         Image("InfoIcon")
                         Text("Info")
@@ -134,6 +134,7 @@ struct ContentView: View {
             .padding(.trailing, 20)
         }
         .background(Image("Background"), alignment: .center)
+        .navigationBarTitle("Bullseye")
     }
     
     func pointsForCurrentRound() -> Int {
