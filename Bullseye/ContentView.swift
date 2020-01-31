@@ -79,6 +79,7 @@ struct ContentView: View {
             }
             .padding(.leading, 10)
             .padding(.trailing, 10)
+            .padding(.bottom, 15)
             
             Button(action: {
                 self.alertIsVisible = true
