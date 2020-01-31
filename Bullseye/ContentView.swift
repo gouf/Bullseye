@@ -19,7 +19,7 @@ struct ContentView: View {
         func body(content: Content) -> some View {
             return content
                 .foregroundColor(Color.white)
-                .shadow(color: Color.black, radius: 5, x: 2, y: 2)
+                .modifier(Shadow())
                 .font(Font.custom("Arial Rounded MT Bold", size: 18))
         }
     }
@@ -28,10 +28,18 @@ struct ContentView: View {
         func body(content: Content) -> some View {
             return content
                 .foregroundColor(Color.yellow)
-                .shadow(color: Color.black, radius: 5, x: 2, y: 2)
+                .modifier(Shadow())
                 .font(Font.custom("Arial Rounded MT Bold", size: 24))
         }
     }
+    
+    struct Shadow: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
+                .shadow(color: Color.black, radius: 5, x: 2, y: 2)
+        }
+    }
+    
     var body: some View {
         VStack {
             Spacer()
