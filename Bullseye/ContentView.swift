@@ -77,6 +77,7 @@ struct ContentView: View {
             .padding(.leading, 20)
             .padding(.trailing, 20)
         }
+        .background(Image("Background"), alignment: .center)
     }
     
     func pointsForCurrentRound() -> Int {
