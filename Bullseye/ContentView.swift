@@ -71,10 +71,10 @@ struct ContentView: View {
                     Text("Start Over")
                 }
                 Spacer()
-                Text("Score:")
+                Text("Score:").modifier(LabelStyle())
                 Text("\(self.totalScore)")
                 Spacer()
-                Text("Round:")
+                Text("Round:").modifier(LabelStyle())
                 Text("\(self.currentRoundCount)")
                 Spacer()
                 Button(action: {}) {
