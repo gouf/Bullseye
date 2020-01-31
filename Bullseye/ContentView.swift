@@ -23,13 +23,22 @@ struct ContentView: View {
                 .font(Font.custom("Arial Rounded MT Bold", size: 18))
         }
     }
+    
+    struct ValueStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
+                .foregroundColor(Color.yellow)
+                .shadow(color: Color.black, radius: 5, x: 2, y: 2)
+                .font(Font.custom("Arial Rounded MT Bold", size: 24))
+        }
+    }
     var body: some View {
         VStack {
             Spacer()
             // Target Row
             HStack {
                 Text("Put the bullseye as choose as you can to:").modifier(LabelStyle())
-                Text("\(self.target)")
+                Text("\(self.target)").modifier(ValueStyle())
             }
             Spacer()
             
@@ -72,10 +81,10 @@ struct ContentView: View {
                 }
                 Spacer()
                 Text("Score:").modifier(LabelStyle())
-                Text("\(self.totalScore)")
+                Text("\(self.totalScore)").modifier(ValueStyle())
                 Spacer()
                 Text("Round:").modifier(LabelStyle())
-                Text("\(self.currentRoundCount)")
+                Text("\(self.currentRoundCount)").modifier(ValueStyle())
                 Spacer()
                 Button(action: {}) {
                     Text("Info")
