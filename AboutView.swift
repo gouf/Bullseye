@@ -33,14 +33,17 @@ struct AboutView: View {
     }
     
     var body: some View {
-        VStack {
-            Text("🎯 Bullseye 🎯").modifier(AboutHeadingStyle())
-            Text("This is Bullseye, this game where you can win points earn fame by dragging a slider.").modifier(AboutBodyStyle())
-            Text("Your goal is to place slider as close as possible to target value. The closer you are, the more points you score.").modifier(AboutBodyStyle())
-            Text("Enjoy!").modifier(AboutBodyStyle())
+        Group {
+            VStack {
+                Text("🎯 Bullseye 🎯").modifier(AboutHeadingStyle())
+                Text("This is Bullseye, this game where you can win points earn fame by dragging a slider.").modifier(AboutBodyStyle())
+                Text("Your goal is to place slider as close as possible to target value. The closer you are, the more points you score.").modifier(AboutBodyStyle())
+                Text("Enjoy!").modifier(AboutBodyStyle())
+            }
+            .navigationBarTitle("About bullseye")
+            .background(beige)
         }
-        .navigationBarTitle("About bullseye")
-        .background(beige)
+        .background(Image("Background"))
     }
 }
 
