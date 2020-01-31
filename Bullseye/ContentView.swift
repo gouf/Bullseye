@@ -14,6 +14,7 @@ struct ContentView: View {
     @State var target = Int.random(in: 1...100)
     @State var totalScore = 0
     @State var currentRoundCount = 1
+    let limeGreen = Color(red: 50.0 / 255.0, green: 205.0 / 255.0, blue: 50.0 / 255.0)
     
     struct LabelStyle: ViewModifier {
         func body(content: Content) -> some View {
@@ -53,7 +54,7 @@ struct ContentView: View {
             // Slider Row
             HStack {
                 Text("1").modifier(LabelStyle())
-                Slider(value: self.$sliderValue, in: 1...100)
+                Slider(value: self.$sliderValue, in: 1...100).accentColor(limeGreen)
                 Text("100").modifier(LabelStyle())
             }
             .padding(.leading, 10)
