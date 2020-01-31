@@ -15,30 +15,29 @@ struct ContentView: View {
     @State var totalScore = 0
     @State var currentRoundCount = 1
     
+    struct LabelStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
+                .foregroundColor(Color.white)
+                .shadow(color: Color.black, radius: 5, x: 2, y: 2)
+                .font(Font.custom("Arial Rounded MT Bold", size: 18))
+        }
+    }
     var body: some View {
         VStack {
             Spacer()
             // Target Row
             HStack {
-                Text("Put the bullseye as choose as you can to:")
-                    .foregroundColor(Color.white)
-                    .shadow(color: Color.black, radius: 5, x: 2, y: 2)
-                    .font(Font.custom("Arial Rounded MT Bold", size: 18))
+                Text("Put the bullseye as choose as you can to:").modifier(LabelStyle())
                 Text("\(self.target)")
             }
             Spacer()
             
             // Slider Row
             HStack {
-                Text("1")
-                    .foregroundColor(Color.white)
-                    .shadow(color: Color.black, radius: 5, x: 2, y: 2)
-                    .font(Font.custom("Arial Rounded MT Bold", size: 18))
+                Text("1").modifier(LabelStyle())
                 Slider(value: self.$sliderValue, in: 1...100)
-                Text("100")
-                    .foregroundColor(Color.white)
-                    .shadow(color: Color.black, radius: 5, x: 2, y: 2)
-                    .font(Font.custom("Arial Rounded MT Bold", size: 18))
+                Text("100").modifier(LabelStyle())
             }
             .padding(.leading, 10)
             .padding(.trailing, 10)
