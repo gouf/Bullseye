@@ -13,6 +13,7 @@
 		151DA97A238E38670057546D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 151DA979238E38670057546D /* Assets.xcassets */; };
 		151DA97D238E38670057546D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 151DA97C238E38670057546D /* Preview Assets.xcassets */; };
 		151DA980238E38670057546D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 151DA97E238E38670057546D /* LaunchScreen.storyboard */; };
+		15AB96B023E4608B002B589B /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AB96AF23E4608B002B589B /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		151DA97C238E38670057546D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		151DA97F238E38670057546D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		151DA981238E38670057546D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15AB96AF23E4608B002B589B /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		151DA972238E38660057546D /* Bullseye */ = {
 			isa = PBXGroup;
 			children = (
+				15AB96AF23E4608B002B589B /* AboutView.swift */,
 				151DA973238E38660057546D /* AppDelegate.swift */,
 				151DA975238E38660057546D /* SceneDelegate.swift */,
 				151DA977238E38660057546D /* ContentView.swift */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15AB96B023E4608B002B589B /* AboutView.swift in Sources */,
 				151DA974238E38660057546D /* AppDelegate.swift in Sources */,
 				151DA976238E38660057546D /* SceneDelegate.swift in Sources */,
 				151DA978238E38660057546D /* ContentView.swift in Sources */,
