@@ -34,6 +34,26 @@ struct ContentView: View {
         }
     }
     
+    struct ButtonLargeTextStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
+                .foregroundColor(Color.white)
+                .modifier(Shadow())
+                .font(Font.custom("Arial Rounded MT Bold", size: 18))
+                .background(Image("Button"), alignment: .center)
+        }
+    }
+    
+    struct ButtonSmallTextStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
+                .foregroundColor(Color.white)
+                .modifier(Shadow())
+                .font(Font.custom("Arial Rounded MT Bold", size: 12))
+                .background(Image("Button"), alignment: .center)
+        }
+    }
+    
     struct Shadow: ViewModifier {
         func body(content: Content) -> some View {
             return content
@@ -66,6 +86,7 @@ struct ContentView: View {
                 Text("Hit Me")
                 
             }
+            .modifier(ButtonLargeTextStyle())
             .alert(isPresented: $alertIsVisible) {
                 () -> Alert in
                     return Alert(
@@ -86,8 +107,12 @@ struct ContentView: View {
                 Button(action: {
                     self.startNewGame()
                 }) {
-                    Text("Start Over")
+                    HStack {
+                        Image("StartOverIcon")
+                        Text("Start Over")
+                    }
                 }
+                .modifier(ButtonSmallTextStyle())
                 Spacer()
                 Text("Score:").modifier(LabelStyle())
                 Text("\(self.totalScore)").modifier(ValueStyle())
@@ -96,8 +121,12 @@ struct ContentView: View {
                 Text("\(self.currentRoundCount)").modifier(ValueStyle())
                 Spacer()
                 Button(action: {}) {
-                    Text("Info")
+                    HStack {
+                        Image("InfoIcon")
+                        Text("Info")
+                    }
                 }
+                .modifier(ButtonSmallTextStyle())
             }
             .padding(.bottom, 20)
             .padding(.leading, 20)
